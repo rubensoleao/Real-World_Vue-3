@@ -2,13 +2,24 @@
   <div id="app">
     <div id="nav">
       <router-link :to="{ name: 'EventList' }">Events</router-link> |
-      <router-link :to="{ name: 'About' }">About</router-link> | 
+      <router-link :to="{ name: 'About' }">About</router-link> |
       <router-link :to="{ name: 'EventCreate' }">Create Event</router-link>
     </div>
-    <router-view  :key="$route.fullPath"/> 
+    <router-view :key="$route.fullPath" />
     <!-- The key ensures the components get loaded when the URL changes-->
+    <NotificationContainer />
   </div>
 </template>
+
+<script>
+import NotificationContainer from './components/NotificationContainer.vue'
+
+export default {
+  components: {
+    NotificationContainer
+  }
+}
+</script>
 
 <style>
 #app {
